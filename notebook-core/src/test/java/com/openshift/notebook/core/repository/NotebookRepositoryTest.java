@@ -17,13 +17,13 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.openshift.notebook.core.config.LocalMongoDBFactoryConfig;
+import com.openshift.notebook.core.config.DevMongoDBFactoryConfig;
 import com.openshift.notebook.core.config.MongoDbConfig;
 import com.openshift.notebook.core.domain.Notebook;
 import com.openshift.notebook.core.domain.NotebookBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { LocalMongoDBFactoryConfig.class,MongoDbConfig.class })
+@ContextConfiguration(classes = { DevMongoDBFactoryConfig.class,MongoDbConfig.class })
 @ActiveProfiles("dev")
 public class NotebookRepositoryTest {
 

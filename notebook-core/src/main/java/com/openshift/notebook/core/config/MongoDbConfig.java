@@ -1,7 +1,6 @@
 package com.openshift.notebook.core.config;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -13,7 +12,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @ImportResource("classpath:applicationContext-mongo.xml")
 public class MongoDbConfig {
 
-	@Inject
+	@Autowired
 	private MongoDbFactoryConfig mongoDbFactoryConfig;
 
 	@Bean

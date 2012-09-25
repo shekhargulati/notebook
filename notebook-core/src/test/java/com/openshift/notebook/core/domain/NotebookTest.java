@@ -14,6 +14,7 @@ public class NotebookTest {
 		Notebook notebook = createNewNotebook("test_user", "test notebook",
 				"this is a test notebook", tags);
 		String json = notebook.toJson();
+		System.out.println(json);
 		JSONObject jsonObject = new JSONObject(json);
 		assertThat(jsonObject).isNotNull();
 		assertThat(jsonObject.get("author")).isEqualTo("test_user");

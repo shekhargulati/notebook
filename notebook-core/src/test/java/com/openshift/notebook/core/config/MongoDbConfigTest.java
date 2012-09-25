@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.openshift.notebook.core.repository.NotebookRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { LocalMongoDBFactoryConfig.class,MongoDbConfig.class })
+@ContextConfiguration(classes = { DevMongoDBFactoryConfig.class,MongoDbConfig.class })
 @ActiveProfiles("dev")
 public class MongoDbConfigTest {
 

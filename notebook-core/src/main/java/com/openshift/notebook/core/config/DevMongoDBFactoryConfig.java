@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 import com.mongodb.Mongo;
 
-@Configuration
+@Configuration("mongoDbFactoryConfig")
 @Profile("dev")
-public class LocalMongoDBFactoryConfig implements MongoDbFactoryConfig {
+public class DevMongoDBFactoryConfig implements MongoDbFactoryConfig {
 
 	/* (non-Javadoc)
 	 * @see com.openshift.notebook.core.config.MongoDbConfig#mongoDbFactory()

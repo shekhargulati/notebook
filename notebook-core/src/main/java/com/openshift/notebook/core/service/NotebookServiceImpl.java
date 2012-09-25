@@ -1,7 +1,10 @@
 package com.openshift.notebook.core.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.openshift.notebook.core.domain.Notebook;
@@ -10,7 +13,7 @@ import com.openshift.notebook.core.repository.NotebookRepository;
 @Service
 public class NotebookServiceImpl implements NotebookService {
 
-	@Inject
+	@Autowired
 	NotebookRepository notebookRepository;
 	
 	@Override
@@ -38,6 +41,11 @@ public class NotebookServiceImpl implements NotebookService {
 	@Override
 	public void deleteNotebook(Notebook notebook) {
 		notebookRepository.delete(notebook);
+	}
+
+	@Override
+	public List<Notebook> findAllNotebooks() {
+		return notebookRepository.findAll();
 	}
 
 }
