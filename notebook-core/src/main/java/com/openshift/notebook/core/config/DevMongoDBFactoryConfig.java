@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 import com.mongodb.Mongo;
 
-@Configuration("mongoDbFactoryConfig")
+@Configuration
 @Profile("dev")
 public class DevMongoDBFactoryConfig implements MongoDbFactoryConfig {
 
