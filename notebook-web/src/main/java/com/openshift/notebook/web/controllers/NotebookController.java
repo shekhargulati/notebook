@@ -30,7 +30,7 @@ public class NotebookController {
         notebookService.createNewNotebook(notebook);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
-        return new ResponseEntity<String>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<String>(notebook.getId(),headers, HttpStatus.CREATED);
     } 
 
 	@RequestMapping(value = "/{id}", headers = "Accept=application/json")
@@ -58,11 +58,12 @@ public class NotebookController {
                 headers, HttpStatus.OK);
     }
 	
-	@RequestMapping(method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> updateFromJson(@RequestBody String json) {
+	@RequestMapping(value = "/{id}",method = RequestMethod.PUT, headers = "Accept=application/json")
+    public ResponseEntity<String> updateFromJson(@PathVariable("id") String id,@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         Notebook notebook = Notebook.fromJsonToNotebook(json);
+        notebook.setId(id);
         if (notebookService.updateNotebook(notebook) == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
