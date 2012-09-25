@@ -1,7 +1,10 @@
 package com.openshift.notebook.core.domain;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -9,6 +12,9 @@ import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 
 @Document(collection = "notebooks")
 public class Notebook {
@@ -150,5 +156,23 @@ public class Notebook {
 		return true;
 	}
 
-	
+	public String toJson() {
+		return new JSONSerializer().include("tags").include("notes.tags").exclude("*.class").serialize(this);
+	}
+
+	public static Notebook fromJsonToNotebook(String json) {
+		return new JSONDeserializer<Notebook>().use(null, Notebook.class)
+				.deserialize(json);
+	}
+
+	public static String toJsonArray(Collection<Notebook> collection) {
+		return new JSONSerializer().exclude("*.class").serialize(collection);
+	}
+
+	public static Collection<Notebook> fromJsonArrayToNotebooks(String json) {
+		return new JSONDeserializer<List<Notebook>>()
+				.use(null, ArrayList.class).use("values", Notebook.class)
+				.deserialize(json);
+	}
+
 }

@@ -27,6 +27,11 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.foursquare</groupId>
+			<artifactId>fongo</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 </project>
