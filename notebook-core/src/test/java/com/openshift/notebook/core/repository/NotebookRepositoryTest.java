@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.UUID;
 
 import javax.inject.Inject;
 
@@ -17,14 +18,14 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.openshift.notebook.core.config.DevMongoDBFactoryConfig;
+import com.openshift.notebook.core.config.FongoDbFactory;
 import com.openshift.notebook.core.config.MongoDbConfig;
 import com.openshift.notebook.core.domain.Notebook;
 import com.openshift.notebook.core.domain.NotebookBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { DevMongoDBFactoryConfig.class,MongoDbConfig.class })
-@ActiveProfiles("dev")
+@ContextConfiguration(classes = { FongoDbFactory.class,MongoDbConfig.class })
+@ActiveProfiles("in-memory")
 public class NotebookRepositoryTest {
 
 	@Inject
@@ -104,6 +105,7 @@ public class NotebookRepositoryTest {
 			String[] tags) {
 		Notebook notebook = NotebookBuilder.notebook().withAuthor(author)
 				.withDescription(desc).withName(name).withTags(tags).build();
+		notebook.setId(UUID.randomUUID().toString());
 		return notebook;
 	}
 }
