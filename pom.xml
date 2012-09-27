@@ -4,7 +4,7 @@
 	<groupId>com.openshift.notebook</groupId>
 	<artifactId>notebook</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>notebook</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -160,7 +160,6 @@
 				<groupId>com.foursquare</groupId>
 				<artifactId>fongo</artifactId>
 				<version>0.0.1</version>
-				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>

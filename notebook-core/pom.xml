@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.openshift.notebook</groupId>
 		<artifactId>notebook</artifactId>
-		<version>1.0</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>notebook-core</artifactId>
 	<name>notebook-core</name>
@@ -30,7 +30,6 @@
 		<dependency>
 			<groupId>com.foursquare</groupId>
 			<artifactId>fongo</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
