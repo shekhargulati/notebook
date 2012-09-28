@@ -259,6 +259,7 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-site-plugin</artifactId>
 						<configuration>
+							<outputDirectory>../target/site/${project.name}</outputDirectory>
 							<reportPlugins>
 								<plugin>
 									<groupId>org.apache.maven.plugins</groupId>
