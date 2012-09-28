@@ -260,7 +260,7 @@
 						<artifactId>maven-site-plugin</artifactId>
 						<version>3.0</version>
 						<configuration>
-							<outputDirectory>../target/site/${project.name}</outputDirectory>
+							<outputDirectory>target/site/${project.name}</outputDirectory>
 							<reportPlugins>
 								<plugin>
 									<groupId>org.apache.maven.plugins</groupId>
