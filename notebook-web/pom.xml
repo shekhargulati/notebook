@@ -82,6 +82,7 @@
 						<artifactId>cobertura-maven-plugin</artifactId>
 						<version>2.5.2</version>
 						<configuration>
+							<format>xml</format>
 							<outputDirectory>../target/cobertura/${project.name}</outputDirectory>
 							<check>
 								<totalLineRate>60</totalLineRate>

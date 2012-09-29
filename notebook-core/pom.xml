@@ -44,6 +44,7 @@
 						<version>2.5.2</version>
 						<configuration>
 							<outputDirectory>../target/cobertura/${project.name}</outputDirectory>
+							<format>xml</format>
 							<check>
 								<totalLineRate>60</totalLineRate>
 							</check>
