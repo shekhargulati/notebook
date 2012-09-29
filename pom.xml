@@ -223,6 +223,18 @@
 				<artifactId>javax.inject</artifactId>
 				<version>1</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test-mvc</artifactId>
+				<version>1.0.0.M1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>1.3</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<profiles>
@@ -250,6 +262,7 @@
 			<id>quality</id>
 			<modules>
 				<module>notebook-core</module>
+				<module>notebook-web</module>
 			</modules>
 
 			<build>

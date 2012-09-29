@@ -50,7 +50,6 @@ public class NotebookController {
 	@RequestMapping(headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> listJson() {
-		
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         List<Notebook> result = notebookService.findAllNotebooks();
@@ -67,7 +66,7 @@ public class NotebookController {
         if (notebookService.updateNotebook(notebook) == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<String>(headers, HttpStatus.OK);
+        return new ResponseEntity<String>(notebook.toJson(),headers, HttpStatus.OK);
     }
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
