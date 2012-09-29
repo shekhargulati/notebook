@@ -53,13 +53,13 @@
 								<goals>
 									<goal>clean</goal>
 									<goal>check</goal>
+									<goal>cobertura</goal>
 								</goals>
 							</execution>
 						</executions>
 					</plugin>
 				</plugins>
 			</build>
-
 		</profile>
 	</profiles>
 </project>
