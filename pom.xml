@@ -260,7 +260,10 @@
 			</build>
 		</profile>
 		<profile>
-			<id>quality</id>
+			<id>full</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<modules>
 				<module>notebook-core</module>
 				<module>notebook-web</module>
@@ -273,19 +276,19 @@
 						<artifactId>cobertura-maven-plugin</artifactId>
 						<version>2.5.2</version>
 						<configuration>
-							<outputDirectory>target/cobertura/${project.name}</outputDirectory>
 							<check>
 								<totalLineRate>60</totalLineRate>
 							</check>
 						</configuration>
 						<executions>
-							<execution>
-								<goals>
-									<goal>clean</goal>
-									<goal>check</goal>
-								</goals>
-							</execution>
-						</executions>
+						   <execution>
+						     <id>cobertura-check</id>
+						     <phase>verify</phase>
+						     <goals>
+						       <goal>cobertura</goal>
+						     </goals>
+						   </execution>
+						 </executions>
 					</plugin>
 				</plugins>
 			</build>
