@@ -295,6 +295,4 @@
 
 		</profile>
 	</profiles>
-	<!--<modules> <module>notebook-core</module> <module>notebook-web</module> 
-		</modules> -->
 </project>
