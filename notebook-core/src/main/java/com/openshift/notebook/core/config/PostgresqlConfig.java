@@ -21,6 +21,7 @@ public class PostgresqlConfig {
 		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactory.setDataSource(dataSource());
 		entityManagerFactory.setPersistenceUnitName("notebook-postgresql");
+		entityManagerFactory.setPersistenceXmlLocation("classpath:META-INF/jpa-persisence.xml");
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
 		hibernateJpaVendorAdapter.setDatabase(Database.POSTGRESQL);
 		hibernateJpaVendorAdapter.setGenerateDdl(true);
