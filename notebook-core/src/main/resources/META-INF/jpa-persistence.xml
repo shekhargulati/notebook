@@ -15,7 +15,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>com.openshift.notebook.core.domain.Profile</class>
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.sql.ProgressDialect"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.charSet" value="UTF-8"/>
 		</properties>

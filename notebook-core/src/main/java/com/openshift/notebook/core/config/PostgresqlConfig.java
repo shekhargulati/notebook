@@ -38,7 +38,7 @@ public class PostgresqlConfig {
 		String port = System.getenv("OPENSHIFT_DB_PORT");
 		String url = "jdbc:postgresql://" + host + ":" + port + "/notebook";
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName("com.progress.sql.jdbc.JdbcProgressDriver");
+		dataSource.setDriverClassName("org.postgresql.Driver");
 		dataSource.setUrl(url);
 		dataSource.setUsername(username);
 		dataSource.setPassword(password);
