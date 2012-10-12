@@ -1,4 +1,4 @@
-package com.openshift.notebook.core.repository;
+package com.openshift.notebook.core.mongo.repository;
 
 import java.util.List;
 

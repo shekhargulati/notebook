@@ -22,6 +22,7 @@ import com.openshift.notebook.core.config.FongoDbFactory;
 import com.openshift.notebook.core.config.MongoDbConfig;
 import com.openshift.notebook.core.domain.Notebook;
 import com.openshift.notebook.core.domain.NotebookBuilder;
+import com.openshift.notebook.core.mongo.repository.NotebookRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { FongoDbFactory.class,MongoDbConfig.class })

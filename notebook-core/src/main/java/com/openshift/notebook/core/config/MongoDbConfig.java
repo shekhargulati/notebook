@@ -22,12 +22,12 @@ public class MongoDbConfig {
 		return mongoTemplate;
 	}
 
-//	@Bean
+	@Bean
 	public LocalValidatorFactoryBean validator() {
 		return new LocalValidatorFactoryBean();
 	}
 
-//	@Bean
+	@Bean
 	public ValidatingMongoEventListener validatingMongoEventListener() {
 		ValidatingMongoEventListener validatingMongoEventListener = new ValidatingMongoEventListener(validator());
 		return validatingMongoEventListener;

@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.openshift.notebook.core.domain.Notebook;
-import com.openshift.notebook.core.repository.NotebookRepository;
+import com.openshift.notebook.core.mongo.repository.NotebookRepository;
 
 @Service
 public class NotebookServiceImpl implements NotebookService {
