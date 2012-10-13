@@ -1,4 +1,4 @@
-package com.openshift.notebook.web;
+package com.openshift.notebook.web.controllers;
 
 public class WebContextLoader extends GenericWebContextLoader {
 

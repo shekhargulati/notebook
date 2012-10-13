@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.openshift.notebook.web;
+package com.openshift.notebook.web.controllers;
 
 import javax.servlet.RequestDispatcher;
 

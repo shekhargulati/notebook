@@ -1,4 +1,4 @@
-package com.openshift.notebook.web;
+package com.openshift.notebook.web.controllers;
 
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
@@ -24,7 +24,7 @@ import com.openshift.notebook.core.domain.Notebook;
 import com.openshift.notebook.core.domain.NotebookBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = WebContextLoader.class, locations = { "classpath:test-webmvc-config.xml" })
+@ContextConfiguration(loader = WebContextLoader.class, locations = { "classpath:test-webmvc-config.xml","classpath:applicationContext.xml" })
 @ActiveProfiles("in-memory")
 public class NotebookControllerTest {
 

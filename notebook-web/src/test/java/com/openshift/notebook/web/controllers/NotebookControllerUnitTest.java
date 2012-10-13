@@ -1,4 +1,4 @@
-package com.openshift.notebook.web;
+package com.openshift.notebook.web.controllers;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doNothing;
