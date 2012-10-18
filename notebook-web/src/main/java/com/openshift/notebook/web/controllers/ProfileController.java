@@ -27,7 +27,7 @@ public class ProfileController {
 	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> createFromJson(@RequestBody String json) {
         Profile profile = Profile.fromJsonToProfile(json);
-        profileService.createProfile(profile);
+        profile = profileService.createProfile(profile);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(String.valueOf(profile.getId()),headers, HttpStatus.CREATED);
